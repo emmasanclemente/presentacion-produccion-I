@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presentación HTML</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #556b2f;
+      text-align: center;
+      color: aliceblue;
+      align-items: center;
+    
+    }
+
+    .presentation-container {
+      position: relative;
+    }
+
+    .slide {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      align-items: center;
+    }
+
+    .slide img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .rollover {
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .rollover:hover {
+      transform: scale(1.1);
+    }
+
+    .active {
+      display: block;
+    }
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .prev-btn {
+      left: 10px;
+    }
+
+    .next-btn {
+      right: 10px;
+    }
+    .diapositiva1{
+        background-color: darkolivegreen;
+        margin-top: 15rem;
+    }
+    .titulo-slide-dos{
+        text-decoration: underline;
+        font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="presentation-container">
+    <div class="slide active diapositiva1">
+        <h1>Presentacion Produccion digital I - 2do Cuatrimestre 2023</h1>
+    <h2>100% - Momento 3</h2>
+    <h3>Emma Sanclemente - 0138641</h3>
+    <h3>Prof. Wesceslao Iganacio Zavala</h3>
+
+    </div>
+
+    <div class="slide">
+      <h1 class="titulo-slide-dos">Imagen de marca</h1>
+      <h2>Objetivo del sitio: Este sitio busca llegar al público joven y vender sus productos (café) de una forma moderna y atractiva. Por lo que contaría con su shop que sólo vendería los artículos de la marca.</h2>
+      <img class="rollover" src="fotos/presentacion.png" alt="logo">
+    </div>
+
+    <div class="slide">
+      <h1>Inspiracion para la pagina</h1>
+      <h2>Perfil del lugar y su público: El perfil que tiene este sito es una modernidad pero llevada a la moda de ahora que es lo vintage, un estilo colorido pero al mismo tiempo clásico y retro</h2>
+      <img class="rollover" src="fotos/inspiracion.png" alt="inspo">
+    </div>
+
+    <div class="slide">
+        <h1>Imagen de marca</h1>
+        <h2>Paleta de Colores</h2>
+        <img class="rollover" src="fotos/colores-fondo.png" alt="inspo">
+      </div>
+  
+
+    <div class="slide">
+        <h1>Diseño de la interacción</h1>
+        <h2>La página contará con 4 htmls distintos, su página principal, su shop, su carrito de compras y una sección “sobre nosotros” de la marca
+        </h2>
+        <img class="rollover" src="fotos/1.png" alt="wireframe">
+      </div>
+
+      <div class="slide">
+        <h1>Arquetictura de la infromacion</h1>
+        <h2>El usuario siempre tendrá la opción de navegar entre las distintas páginas HTML desde cualquiera de estas secciones.</h2>
+        <img class="rollover" src="fotos/2.png" alt="Imagen 2">
+      </div>
+
+      <div class="slide">
+        <h1>Arquetictura de la infromacion</h1>
+        <h2> El usuario ambos desde una computadora o celular al entrar a la página va a encontrarse con la “home’ de esta misma que muestra un poco de qué va la empresa y muestra algunos de sus productos.</h2>
+        <img class="rollover" src="fotos/3.png" alt="Imagen 2">
+      </div>
+
+      <div class="slide">
+        <h1>Arquetictura de la infromacion</h1>
+        <h2>En el nav de este ,que va a ser el mismo en todos los htmls, van a haber tres otras secciones, la tienda de los productos, el carrito de compras y una sección de “sobre nosotros” dónde cuenta de la empresa y su historia. </h2>
+        <img class="rollover" src="fotos/4.png" alt="Imagen 2">
+      </div>
+
+      <div class="slide">
+        <h1>wireframe</h1>
+        <h2>Display Movil</h2>
+        <img class="rollover" src="fotos/5.jpg" alt="Imagen 2">
+      </div>
+
+      <div class="slide">
+        <h1 style="color: #E441C5; margin-top: 10rem;font-size: 6rem;">Be & Brew</h1>
+        <a href="https://emmasanclemente.github.io/produccion-digital-1/" style="text-decoration: none; color: aliceblue; font-size: 4rem;">Mi pagina web</a>
+        
+      </div>
+  
+
+    <div class="nav-btn prev-btn" onclick="changeSlide(-1)">❮</div>
+    <div class="nav-btn next-btn" onclick="changeSlide(1)">❯</div>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let currentSlideIndex = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide) => {
+        slide.classList.remove('active');
+      });
+      slides[index].classList.add('active');
+      currentSlideIndex = index;
+    }
+
+    function changeSlide(direction) {
+      const newIndex = currentSlideIndex + direction;
+      if (newIndex >= 0 && newIndex < slides.length) {
+        showSlide(newIndex);
+      }
+    }
+
+    // Mostrar el primer slide al cargar la página
+    showSlide(0);
+  </script>
+
+</body>
+</html>
